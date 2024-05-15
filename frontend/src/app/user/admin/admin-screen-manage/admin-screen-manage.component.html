@@ -1,0 +1,99 @@
+<div class="container content">
+  <div class="d-flex justify-content-between mb-3 mt-5">
+    <h1 >Add more gadgets</h1>
+
+    <button
+      mat-stroked-button
+      color="primary"
+      (click)="postSuggestionGadgets()"
+      aria-label="Concluir ação"
+      style="background-color: #f7513a; color: #fff"
+      >
+      Product Suggest With AI
+    </button>
+  </div>
+
+  <hr>
+
+  <form [formGroup]="formGroup">
+    <div class="row">
+
+      <div class="col-md-12">
+
+        <div class="row">
+          <mat-form-field appearance="outline" class="col-6">
+            <mat-label>Name</mat-label>
+            <input matInput #input placeholder="Ex. Nougat" formControlName="name">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="col-4">
+            <mat-label>Description</mat-label>
+            <textarea matInput #input placeholder="Ex. Nougat" formControlName="description" style="white-space: pre-line"></textarea>
+          </mat-form-field>
+
+          <div class="col-2">
+            <button
+              mat-stroked-button
+              color="primary"
+              (click)="postSuggestion()"
+              aria-label="Conclude action"
+              style="background-color: #f7513a; color: #fff; padding: 22px;"
+              >
+              Description Suggest With AI
+            </button>
+          </div>
+
+          <mat-form-field  appearance="outline" class="col-10">
+            <mat-label>URL image</mat-label>
+            <input matInput #input placeholder="Ex. Nougat" formControlName="img">
+            <mat-error
+            >Campo obrigatório.</mat-error
+            >
+          </mat-form-field>
+
+          <div class="col-2">
+            <mat-slide-toggle formControlName="availability">Availability</mat-slide-toggle>
+          </div>
+
+          <mat-form-field appearance="outline" class="col-6">
+            <mat-label>Price</mat-label>
+            <input matInput type="number" class="example-right-align" placeholder="0" formControlName="price">
+            <span matTextPrefix>$&nbsp;</span>
+            <span matTextSuffix>.00</span>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="col-6">
+            <mat-label>Quantity</mat-label>
+            <input matInput #input maxlength="10" placeholder="Ex. Nougat" formControlName="quantity">
+          </mat-form-field>
+
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <hr />
+
+  <div class="d-flex justify-content-between">
+    <div cdkFocusInitial>
+      <button
+        color="warn"
+        mat-flat-button
+        aria-label="Cancelar ação"
+      >
+      <a [routerLink]="['/admin-screen']" routerLinkActive="router-link-active" style="color: white; text-decoration:none">Cancelar</a>
+      </button>
+    </div>
+    <div>
+      <button
+        mat-stroked-button
+        color="basic"
+        type="submit"
+        (click)="onSubmit()"
+        aria-label="Concluir ação"
+      >
+      Concluir
+      </button>
+    </div>
+  </div>
+</div>

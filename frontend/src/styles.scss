@@ -1,0 +1,26 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+// regular style toast
+@import 'ngx-toastr/toastr';
+
+// if you'd like to use it without importing all of bootstrap it requires
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+// boostrap 5
+@import 'ngx-toastr/toastr-bs5-alert';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+
+  ::ng-deep  .mat-mdc-tab-group, .mat-mdc-tab-nav-bar {
+  --mdc-tab-indicator-active-indicator-color: #f7513a !important;
+  --mat-tab-header-active-label-text-color: #f7513a !important;
+
+  --mat-tab-header-active-hover-indicator-color: #f7513a !important;
+  --mat-tab-header-active-hover-label-text-color: #f7513a !important;
+
+  --mat-tab-header-inactive-ripple-color: #f7513a !important;
+
+  }
+}

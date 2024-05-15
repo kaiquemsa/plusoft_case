@@ -1,0 +1,154 @@
+<div class="container mt-5">
+  <ngb-carousel class="mb-5" style="background-color: #f7513a1c; border-radius: 24px;">
+    <ng-template ngbSlide *ngFor="let item of gadgets">
+      <a href="#{{item.name}}">
+        <div class="row">
+          <div class="col">
+            <img [src]="item.img" class="d-block w-100" alt="Imagem 1" style="border-radius: 16px; height: 300px; object-fit:contain">
+          </div>
+        </div>
+      </a>
+    </ng-template>
+  </ngb-carousel>
+
+
+  <div class="row mb-3 mt-5">
+    <div class="paragraph col-1">
+      <fa-icon [icon]="faStar" style="font-size:32px;color:rgb(255, 255, 255);"></fa-icon>
+    </div>
+    <div class="nameSpace col">
+      <h1>Highlights</h1>
+    </div>
+  </div>
+
+  <ngb-carousel class="mb-5">
+    <ng-template ngbSlide *ngFor="let group of imageGroups">
+      <div class="row">
+        <div class="col" *ngFor="let image of group">
+          <img [src]="image.img" class="d-block w-100" alt="Imagem" style="border-radius: 16px; width:350px; height:250px">
+          <div class="row items-sale">
+            <div class="col infos-sale">
+              <h2>{{image.name}}</h2>
+              <p>R${{image.price}}</p>
+            </div>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalBuy" (click)="soldProduct = image" style="width:80%; background-color:#f7513a; border-color:#f7513a">
+              BUY
+            </button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+
+  <div class="banner mb-5">
+    <img src="https://img.freepik.com/free-vector/electronics-store-twitter-header_23-2151168341.jpg" alt="">
+  </div>
+
+  <div class="row mb-3 mt-5">
+    <div class="paragraph col-1">
+      <fa-icon [icon]="faStore" style="font-size:32px;color:rgb(255, 255, 255);"></fa-icon>
+    </div>
+    <div class="nameSpace col">
+      <h1>Products</h1>
+    </div>
+  </div>
+  <div class="products mb-5">
+    <ngb-carousel>
+      <ng-template ngbSlide>
+        <div class="row">
+          <div class="col" *ngFor="let item of gadgets">
+            <img [src]="item.img" class="d-block w-100" alt="Imagem 1" [id]="item.name" style="border-radius: 16px; width: 200px; height: 200px">
+            <div class="row items-sale">
+              <div class="col infos-sale">
+                <h2>{{ item.name }} </h2>
+                <p>R${{ item.price }}</p>
+              </div>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalBuy" (click)="soldProduct = item" style="width:80%; background-color:#f7513a; border-color:#f7513a">
+                BUY
+              </button>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+
+  <!-- Modal Delete -->
+  <div class="modal fade" id="modalBuy" tabindex="-1" aria-labelledby="modalBuyLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="modalBuyLabel">Buy product confirmation</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Do you really want to buy this item?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="buyProduct(soldProduct)">Buy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- -->
+
+  <div class="row mb-3 mt-5">
+    <div class="paragraph col-1">
+      <fa-icon [icon]="faHouse" style="font-size:32px;color:rgb(255, 255, 255);"></fa-icon>
+    </div>
+    <div class="nameSpace col">
+      <h1>Who we are</h1>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col-8">
+      <p>Lorem ipsum dolor sit amet. Sed voluptatibus necessitatibus et libero nihil sed velit galisum qui quam placeat est obcaecati facere eos architecto reprehenderit non porro provident? Sed voluptas porro et odit galisum et laborum dolor qui maxime enim et quam omnis
+        ut harum porro aut perspiciatis perspiciatis. Sed unde quibusdam qui eveniet internos id labore itaque aut repellendus inventore At corrupti magni quo iste vitae. Cum molestias esse aut nesciunt mollitia est assumenda temporibus in atque molestiae. Et quidem nemo qui iusto dolorem est explicabo provident et fugit velit sit quibusdam natus et ipsum modi.
+      </p>
+    </div>
+    <div class="col-4">
+      <img src="https://img.freepik.com/free-photo/abstract-blur-shopping-mall_1203-7929.jpg" alt="" style="border-radius: 24px; width: 100%; height: 250px">
+    </div>
+  </div>
+
+</div>
+<div class="pre-footer">
+  <div class="">
+    <div class="row mb-3">
+      <div class="col-6"><h2>Contact us</h2></div>
+      <div class="col-6" style="display: flex; gap: 16px">
+        <fa-icon [icon]="faInstagram" style="font-size:32px;color:rgb(255, 255, 255);"></fa-icon>
+        <fa-icon [icon]="faFacebook" style="font-size:32px;color:rgb(255, 255, 255);"></fa-icon>
+        <fa-icon [icon]="faTiktok" style="font-size:32px;color:rgb(255, 255, 255);"></fa-icon>
+        <fa-icon [icon]="faWhatsapp" style="font-size:32px;color:rgb(255, 255, 255);"></fa-icon>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6"><p>Rua 25 de Março 102, Sorocaba-SP</p></div>
+      <div class="col-6"><p style="font-weight: bold">(15)909090090</p></div>
+    </div>
+    <hr style="margin-right: -20vw; margin-left: -20vw">
+    <div class="row">
+      <div style=" flex-direction: row; display: flex; gap: 16px; font-weight: 600">
+        <p>Account</p>
+        <p>Service</p>
+        <p>All products</p>
+        <p>Best sellers</p>
+        <p>News</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="col footer-info">
+    <p style="font-weight: 600">Payment methods</p>
+  </div>
+  <div class="col footer-info">
+    <p style="font-weight: 600">Your purchase is safe</p>
+  </div>
+  <div class="col footer-info">
+    <p style="font-weight: 600">Create by Kaique Silva</p>
+  </div>
+</div>

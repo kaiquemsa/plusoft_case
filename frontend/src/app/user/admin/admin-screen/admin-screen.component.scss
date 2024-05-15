@@ -1,0 +1,70 @@
+.content {
+  mat-table {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  .mat-column-name {
+    width: 20%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .mat-column-description {
+    width: 30%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mat-column-price {
+    width: 8%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .mat-column-quantity {
+    width: 8%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .mat-column-img {
+    width: 10%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mat-column-available {
+    width: 8%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .mat-column-edit {
+    width: 8%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .mat-column-exclude {
+    width: 8%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+::ng-deep  .mat-mdc-tab-group, .mat-mdc-tab-nav-bar {
+  --mdc-tab-indicator-active-indicator-color: #f7513a !important;
+  --mat-tab-header-active-label-text-color: #f7513a !important;
+
+  --mat-tab-header-active-hover-indicator-color: #f7513a !important;
+  --mat-tab-header-active-hover-label-text-color: #f7513a !important;
+
+  --mat-tab-header-inactive-ripple-color: #f7513a !important;
+
+}
