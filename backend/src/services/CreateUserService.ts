@@ -7,6 +7,10 @@ export class CreateUserService {
   async execute({ name, email, password }: iStudent): Promise<Users> {
     const repository = AppDataSource.getRepository(Users);
 
+    if (await repository.findOneBy({ email })) {
+      throw new Error("email already exists");
+    }
+
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const User = repository.create({ name, email, password: hashedPassword });
