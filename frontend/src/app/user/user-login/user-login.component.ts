@@ -58,11 +58,11 @@ export class UserLoginComponent {
             this.toastr.success('Register with success!', 'Success', {
               closeButton: true
             });
-            localStorage.setItem('isLoggedIn', 'true');
+            sessionStorage.setItem('isLoggedIn', 'true');
             this.router.navigate(['/admin-screen']);
           },
           error => {
-            this.toastr.error('Sign-up error!', 'Error', {
+            this.toastr.error(error.error, 'Error', {
               closeButton: true
             });
           }
@@ -75,7 +75,7 @@ export class UserLoginComponent {
             this.toastr.success('You are authenticated!', 'Success', {
               closeButton: true
             });
-            localStorage.setItem('isLoggedIn', 'true');
+            sessionStorage.setItem('isLoggedIn', 'true');
             this.router.navigate(['/admin-screen']);
           },
           error => {

@@ -123,6 +123,11 @@ export class AdminScreenManageComponent {
 
   postSuggestion() {
     if (this.formGroup.get('name')?.value) {
+      this.toastr.info('Loading description...', 'Wait a moment', {
+        closeButton: true,
+        timeOut: 30000
+      });
+
       const name = this.formGroup.get('name')?.value;
 
       const promptDescription = `Descreva o produto ${name}, destacando suas principais características, benefícios e possíveis aplicações, mas seja breve.`
@@ -130,11 +135,13 @@ export class AdminScreenManageComponent {
       const messageObject = { message: promptDescription };
 
       this.httpRequest.postAISuggestion(messageObject).subscribe(response => {
+        this.toastr.clear();
         this.formGroup.get('description')?.setValue(response.message);
         this.toastr.success('Description suggestion!', 'Success', {
           closeButton: true
         });
       }, error => {
+        this.toastr.clear();
         this.toastr.error('Error description suggestion!');
       });
     }

@@ -18,7 +18,7 @@ export class AuthGuardService {
 
     if ((typeof window !== 'undefined')) {
 
-      isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+      isLoggedIn = sessionStorage.getItem('isLoggedIn') === 'true';
     }
 
     if (!isLoggedIn) {
