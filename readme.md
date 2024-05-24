@@ -58,6 +58,8 @@ A integração da API de IA do Google (Gemini) é uma característica distintiva
   </div>
 </details>
 
+<a name="video"></a>
+
 # Vídeo Demonstrativo 
 
 https://github.com/kaiquemsa/plusoft_case/assets/94807101/7f67767a-1947-4624-8e25-4e47bec054e3
